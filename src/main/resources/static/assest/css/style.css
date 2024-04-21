@@ -1,0 +1,244 @@
+body{
+    /* background: url(../images/jerry-zhang-HfPFSqwnkhw-unsplash.jpg), lightgray 50% / cover no-repeat; */
+
+    background: url(../images/jerry-zhang-HfPFSqwnkhw-unsplash.jpg) no-repeat center center fixed;
+
+    background-size: cover;
+
+
+
+}
+
+
+ul, ol {
+    padding-left: 0; 
+}
+
+/* ul li, ol li {
+    list-style: none; /* Зніміть маркери списку (якщо вони є) 
+} 
+*/
+
+
+
+
+/* .Frame1{
+    width: 322px; 
+    height: 1024px; 
+    position: relative
+    
+} */
+
+#Rectangle1{
+    width: 322px; 
+    height: 1024px; 
+    left: 0px; 
+    top: 0px; 
+    position: fixed;
+    background: rgba(0, 0, 0, 0.62)
+}
+
+#Rectangle2{
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    
+    height: 100%;
+
+    background: rgba(31, 31, 31, 0.97);
+    
+}
+
+.Frame2{
+    display: flex;
+    width: 322px;
+    padding: 9px 12px 0px 12px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 103px;
+}
+
+#UserName{
+    width: 136px;
+    height: 25px;
+    flex-shrink: 0;
+
+    color: #A8A8A8;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#GoOut{
+    width: 59px;
+    height: 20px;
+    flex-shrink: 0;
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.Frame3{
+    width: 322px;
+    height: 638px;
+    flex-shrink: 0;  
+    
+}
+
+
+.TextStyle_1{
+
+    margin-top: 15px;
+    left: 57px; 
+    position: absolute;
+
+
+    width: 180px;
+    height: 20px;
+    flex-shrink: 0;
+
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.Pre_li{
+    list-style-image: url(../images/Star1.png);
+}
+
+
+/* .TextStyle_2{
+
+    left: 57px; 
+    margin-top: 10px;
+    position: absolute;
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    word-wrap: break-word;
+} */
+
+
+.TextStyle_2{
+    column-gap: 1rem; /* відступ між колонками */
+    list-style-type: none; /* відміна стилів списку */
+}
+
+.TextStyle_2 li {
+    margin-top: 10px;  
+    
+}
+
+.TextStyle_2 li a{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    word-wrap: break-word;
+
+    text-decoration: none;
+}
+
+#info_table{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    /* font-weight: 600; */
+    line-height: normal;
+
+    border-collapse: collapse;
+
+    
+    
+
+    margin-top: 100px;
+
+    margin-left: 30px;
+    margin-right: 30px;
+    width: auto;
+    /* margin: 100px 30px 30px 30px; */
+    
+
+    /* max-width: 100%;
+
+
+    min-width: 40%; */
+
+
+}
+
+#Main_row{
+    font-size: 18px;
+    font-weight: 400;
+    
+}
+
+th, td{
+    border: 1px solid #000;
+    padding: 10px;
+    
+
+}
+
+#info_table tr:nth-child(even){
+    /* padding: 30px; */
+    background: #464646;
+}
+
+#FormSerch{
+    margin-top: 32px;
+}
+
+#Serch{
+    width: 735px;
+    height: 37px;
+    flex-shrink: 0;
+    margin-left: 150px;
+
+    border: 1px solid #858585;
+    background: rgba(173, 173, 173, 0.00);
+}
+
+#ButtonSerch{
+    width: 82px;
+    height: 37px;
+    flex-shrink: 0;
+
+    border: 4px solid #ADADAD;
+    background: rgba(49, 126, 171, 0.00);
+
+
+
+    color: #FFF5F5;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+
+
+

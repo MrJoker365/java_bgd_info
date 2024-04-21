@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REST API Demo</title>
+</head>
+<body>
+<h1>Привіт з REST API</h1>
+<button onclick="fetchData()">Отримати привітання</button>
+<p id="response"></p>
+
+<script>
+        function fetchData() {
+            fetch('/api/hello')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('response').textContent = data;
+                })
+                .catch(error => console.error('Помилка:', error));
+        }
+    </script>
+</body>
+</html>

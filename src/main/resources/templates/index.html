@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="../static/assest/css/style.css" >
+    <title>Таблиця з 7 колонками</title>
+</head>
+<body>
+
+
+    <div class="Frame1">
+        <div id="Rectangle1">
+            <div class="Frame2">
+
+                <div id="UserName">User name</div>
+                <div id="GoOut">Go out</div>
+            
+            
+            </div>
+
+            <div class="Frame3">
+                <div class="TextStyle_1">
+                    
+                    <nav>
+                        <ul class="Pre_li">
+                            <li>Список будинків</li>
+                        </ul>
+                    
+                        <ul class="TextStyle_2">
+                            <li onclick="addRow()"> <a href="#">Переглянути список</a></li>
+                            <li onclick="addNewRow()"><a href="#">Добавити інформацію</a></li>
+                            <li onclick="editCell()"> <a href="#">Редагувати</a></li>
+                            <li> <a href="/">Видалити</a></li>
+                        </ul>
+                    </nav>
+
+
+
+
+                </div>
+
+                <!-- <div class="TextStyle_2">Add new deweloper</div> -->
+
+          
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="Rectangle2">
+
+        <form id="FormSerch">
+            <input type="text" id="Serch" name="userInput" placeholder="Ключове слово">
+            <button type="submit" id="ButtonSerch">Пошук</button>
+        </form>
+
+
+        <table  id="info_table">
+            <tr id="Main_row">
+                <th>ID</th>
+                <th>Адркса</th>
+                <th>Місце відключення електрики</th>
+                <th>Місце перекриття</th>
+                <th>Особи з обмеженою мобільністю</th>
+                <th>Приблизна кількість осіб</th>
+                <th>Колонка 7</th>
+            </tr>
+            <tr class="row_1">
+                <td>1</td>
+                <td>Рядок 1, Колонка 2</td>
+                <td>Рядок 1, Колонка 3</td>
+                <td>Рядок 1, Колонка 4</td>
+                <td>Рядок 1, Колонка 5</td>
+                <td>Рядок 1, Колонка 6</td>
+                <td>Рядок 1, Колонка 7</td>
+            </tr>
+            <!-- <tr class="row_2">
+                <td>2</td>
+                <td>Рядок 2, Колонка 2</td> 
+                <td>Рядок 2, Колонка 3</td>
+                <td>Рядок 2, Колонка 4</td>
+                <td>Рядок 2, Колонка 5</td>
+                <td>Рядок 2, Колонка 6</td>
+                <td>Рядок 2, Колонка 7</td>
+            </tr> -->
+            <!-- Додайте більше рядків за потребою -->
+        </table>
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- <script>
+    
+        let block1 = document.getElementById("Rectangle1");
+        let block1Width = block1.offsetWidth;
+        
+        
+        var block2 = document.getElementById("Rectangle2");
+        block2.style.border = "2px solid black"; // Встановлення границі
+        block2.style.width = block1Width + "px"; // Встановлення ширини на основі block1Width
+        </script> -->
+
+
+
+   <script src="../static/assest/js/Main.js"></script>
+   
+</body>
+</html>
