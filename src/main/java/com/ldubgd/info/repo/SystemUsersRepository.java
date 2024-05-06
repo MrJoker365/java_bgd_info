@@ -17,4 +17,6 @@ public interface SystemUsersRepository extends JpaRepository<SystemUsers, Long> 
 
     Boolean existsByEmail(String email);
 
+
+
 }

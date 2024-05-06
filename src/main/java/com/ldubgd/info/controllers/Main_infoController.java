@@ -3,6 +3,7 @@ package com.ldubgd.info.controllers;
 //import com.ldubgd.info.models.Main_info;
 //import com.ldubgd.info.service.Main_infoService;
 //import com.ldubgd.info.service.Main_infoServiceInterface;
+
 import com.ldubgd.info.models.InfoTables;
 import com.ldubgd.info.models.SystemUsers;
 import com.ldubgd.info.models.TableColumns;
@@ -14,11 +15,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+//@CrossOrigin
 public class Main_infoController {
 
     @Autowired
@@ -122,6 +124,11 @@ public class Main_infoController {
 
 
 
+
+    @GetMapping("/info")
+    public String userData(Principal principal) {
+        return principal.getName();
+    }
 
 
 
