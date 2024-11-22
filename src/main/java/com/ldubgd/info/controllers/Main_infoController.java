@@ -7,6 +7,7 @@ package com.ldubgd.info.controllers;
 import com.ldubgd.info.models.InfoTables;
 import com.ldubgd.info.models.SystemUsers;
 import com.ldubgd.info.models.TableColumns;
+import com.ldubgd.info.repo.SystemManagersRepository;
 import com.ldubgd.info.service.InfoTableService;
 import com.ldubgd.info.service.Main_infoService;
 import com.ldubgd.info.service.SystemUsersService;
@@ -22,6 +23,9 @@ import java.util.List;
 @RequestMapping("/api")
 //@CrossOrigin
 public class Main_infoController {
+
+    @Autowired
+    private SystemManagersRepository systemManagersRepository;
 
     @Autowired
     private SystemUsersService systemUsersService;
@@ -97,9 +101,13 @@ public class Main_infoController {
     }
 
     @GetMapping("/getTableNameBySys_manager_id")
-    public List<String> getAllTableNameBySys_manager_id (@RequestParam(name = "id") Long id) {
-        System.out.println(infoTableService.getAllTableNameBySys_manager_id(id));
-        return infoTableService.getAllTableNameBySys_manager_id(id);
+    public List<String> getAllTableNameBySys_manager_id (Principal principal
+//                                                         @RequestParam(name = "id") Long id
+    ) {
+        System.out.println(
+                infoTableService.getAllTableNameBySys_manager_id(
+                        systemManagersRepository.findIdByEmail(principal.getName())));
+        return infoTableService.getAllTableNameBySys_manager_id(getSystemManagerId(principal));
     }
 
 
@@ -109,17 +117,20 @@ public class Main_infoController {
 
 
     @GetMapping("/getAllUsers")
-    public List<SystemUsers> getAllUsers(@RequestParam(name = "id", defaultValue = "1") Long id) {
-        System.out.println(systemUsersService.getAllUsers(id));
-        return systemUsersService.getAllUsers(id);
+    public List<SystemUsers> getAllUsers(Principal principal)
+//                                         @RequestParam(name = "id", defaultValue = "1") Long id)
+                                         {
+        System.out.println(systemUsersService.getAllUsers(getSystemManagerId(principal)));
+        return systemUsersService.getAllUsers(getSystemManagerId(principal));
     }
 
 
     @GetMapping("/getUser")
-    public SystemUsers getUser(@RequestParam(name = "m_id", defaultValue = "1") Long m_id,
+    public SystemUsers getUser(Principal principal,
+//                               @RequestParam(name = "m_id", defaultValue = "1") Long m_id,
                                @RequestParam(name = "u_id", defaultValue = "1") Long u_id) {
-        System.out.println(systemUsersService.getUser(m_id, u_id));
-        return systemUsersService.getUser(m_id, u_id);
+        System.out.println(systemUsersService.getUser(getSystemManagerId(principal), u_id));
+        return systemUsersService.getUser(getSystemManagerId(principal), u_id);
     }
 
 
@@ -129,6 +140,12 @@ public class Main_infoController {
     public String userData(Principal principal) {
         return principal.getName();
     }
+
+    @GetMapping("/info_2")
+    public Long getSystemManagerId(Principal principal) {
+        return systemUsersService.getSystemManagerId(principal.getName()) ;
+    }
+
 
 
 

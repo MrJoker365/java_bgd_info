@@ -87,19 +87,25 @@ public class AuthController {
 //        return new ResponseEntity<>("User signed success!", HttpStatus.OK);
 //    }
 
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
-        try {
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(
-                            loginDto.getEmail(),
-                            loginDto.getPassword()));
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            return new ResponseEntity<>("User signed in successfully!", HttpStatus.OK);
-        } catch (AuthenticationException e) {
-            return new ResponseEntity<>("Invalid email or password", HttpStatus.UNAUTHORIZED);
-        }
-    }
+
+
+
+
+
+
+//    @PostMapping("/login")
+//    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
+//        try {
+//            Authentication authentication = authenticationManager.authenticate(
+//                    new UsernamePasswordAuthenticationToken(
+//                            loginDto.getEmail(),
+//                            loginDto.getPassword()));
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+//            return new ResponseEntity<>("User signed in successfully!", HttpStatus.OK);
+//        } catch (AuthenticationException e) {
+//            return new ResponseEntity<>("Invalid email or password", HttpStatus.UNAUTHORIZED);
+//        }
+//    }
 
 
 

@@ -41,6 +41,10 @@ public class SystemUsersService implements SystemUsersServiceInterface {
         return systemUsersRepository.findBySystemManagers_IdAndId(managerId, userId);
     }
 
+    public Long getSystemManagerId(String email){
+        return systemUsersRepository.findSystemManagerIdByUserEmail(email);
+    }
+
 
 
 
