@@ -81,7 +81,8 @@ public class Main_infoController {
 
 
     @PostMapping("/createTable")
-    public String createTable( @RequestBody InfoTables infoTables){
+    public String createTable( @RequestBody InfoTables infoTables, Principal principal){
+        infoTables.setSystemManagers(systemManagersRepository.getById(getSystemManagerId(principal)));
         infoTableService.createTable(infoTables);
 
         return "Таблицю створено";

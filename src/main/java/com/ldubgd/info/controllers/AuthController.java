@@ -4,8 +4,10 @@ import com.ldubgd.info.dto.JwtResponseDto;
 import com.ldubgd.info.dto.LoginDto;
 import com.ldubgd.info.dto.RegisterDto;
 import com.ldubgd.info.models.Role;
+import com.ldubgd.info.models.SystemManagers;
 import com.ldubgd.info.models.SystemUsers;
 import com.ldubgd.info.repo.RoleRepository;
+import com.ldubgd.info.repo.SystemManagersRepository;
 import com.ldubgd.info.repo.SystemUsersRepository;
 import com.ldubgd.info.security.CustomUserDetailsService;
 import com.ldubgd.info.security.utils.JwtTokenUtils;
@@ -37,8 +39,7 @@ public class AuthController {
 
     private final CustomUserDetailsService customUserDetailsService;
     private final JwtTokenUtils jwtTokenUtils;
-
-
+    private final SystemManagersRepository systemManagersRepository;
 
 
 //    @Autowired
@@ -63,10 +64,19 @@ public class AuthController {
 
         SystemUsers users = new SystemUsers();
         users.setEmail(registerDto.getEmail());
+        users.setName(registerDto.getName());
         users.setPassword(passwordEncoder.encode(registerDto.getPassword()));
 
         Role role = roleRepository.findByName("ROLE_ADMIN").get();
         users.setRoles(Collections.singletonList(role));
+
+
+        SystemManagers managers = new SystemManagers();
+        managers.setEmail(registerDto.getEmail());
+
+        systemManagersRepository.save(managers);
+
+        users.setSystemManagers(systemManagersRepository.findByEmail(registerDto.getEmail()));
 
         systemUsersRepository.save(users);
 

@@ -10,4 +10,6 @@ public interface SystemManagersRepository extends JpaRepository<SystemManagers, 
 //    Long findIdByEmail(String email);
     @Query("SELECT sm.id FROM SystemManagers sm WHERE sm.email = :email")
     Long findIdByEmail(@Param("email") String email);
+
+    SystemManagers findByEmail(String email);
 }
